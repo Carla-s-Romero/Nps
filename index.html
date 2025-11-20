@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title>Pesquisa NPS — KSA</title>
+</head>
+<body>
+  <div class="card" role="main">
+    <h1>Pesquisa de Satisfação — KSA (NPS)</h1>
+    <p class="lead">Em uma escala de 0 a 10, qual a probabilidade de você recomendar o KSA a um colega?</p>
+
+    <div id="scale" class="scale" role="radiogroup" aria-label="Escala NPS">
+    </div>
+
+    <p class="section-title">Perguntas abertas</p>
+    <label class="block">O que mais você gosta no KSA?</label>
+    <textarea id="like" rows="3" placeholder="Conte o que você mais usa/curte..."></textarea>
+
+    <label class="block">O quanto o KSA tem ajudado você no dia a dia?</label>
+    <textarea id="help" rows="3" placeholder="Explique como o KSA contribui na sua rotina..."></textarea>
+
+    <label class="block">Quais problemas o KSA resolveu para você?</label>
+    <textarea id="problems" rows="3" placeholder="Dê exemplos de problemas que o KSA ajudou a resolver..."></textarea>
+
+    <label class="block">O que podemos melhorar no sistema?</label>
+    <textarea id="improve" rows="3" placeholder="Sugestões, problemas ou melhorias..."></textarea>
+
+    <label class="block">Seu papel (professor / aluno / coordenador / responsável)</label>
+    <input id="role" type="text" placeholder="Ex: Professor, Aluno, Coordenador, Responsável" />
+
+    <div class="controls">
+      <button class="primary" id="submitBtn">Enviar resposta</button>
+      <button class="ghost" id="downloadCsv">Baixar CSV com respostas</button>
+      <button class="ghost" id="clearStorage">Limpar respostas</button>
+    </div>
+
+    <div class="stats" aria-live="polite">
+      <div><strong>N.º de respostas:</strong> <span id="count">0</span></div>
+      <div style="margin-top:6px"><strong>NPS atual:</strong> <span id="nps">—</span> <span class="small">(<span id="prom">0</span>% promotores, <span id="neu">0</span>% neutros, <span id="det">0</span>% detratores)</span></div>
+      <div class="note">Interprete: NPS = %Promotores (9–10) − %Detratores (0–6).</div>
+    </div>
+
+    <div id="responsesList"></div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
